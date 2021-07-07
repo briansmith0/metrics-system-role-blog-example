@@ -1,0 +1,12 @@
+all:
+  children:
+    servers:
+      hosts:
+        rhel8-server1:
+        rhel8-server2:
+        rhel7-server1:
+        rhel7-server2:
+    metrics_monitor:
+      hosts:
+        controlnode:
+
