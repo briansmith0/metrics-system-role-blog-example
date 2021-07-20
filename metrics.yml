@@ -1,13 +1,3 @@
-- name: Use metrics system role to configure PCP metrics recording
-  hosts: servers
-  roles: 
-    - redhat.rhel_system_roles.metrics
-
-- name: Use metrics system role to configure Grafana
-  hosts: metrics_monitor
-  roles: 
-    - redhat.rhel_system_roles.metrics
-
 - name: Open Firewall for pmcd
   hosts: servers
   tasks:
@@ -25,3 +15,13 @@
         permanent: yes
         immediate: yes
         state: enabled
+
+- name: Use metrics system role to configure PCP metrics recording
+  hosts: servers
+  roles: 
+    - redhat.rhel_system_roles.metrics
+
+- name: Use metrics system role to configure Grafana
+  hosts: metrics_monitor
+  roles: 
+    - redhat.rhel_system_roles.metrics
